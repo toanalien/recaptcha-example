@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-recaptcha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "toanalien",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "recaptcha2": "^1.0.8"
+  }
+}

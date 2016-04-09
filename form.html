@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReCaptcha</title>
+    <style>
+        #comment_form {
+            width: 200px;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+<body>
+<form id="comment_form" action='/' method="post">
+    <div id="recaptcha"></div>
+    <br>
+
+</form>
+<script>
+    var RC2KEY = 'sitekey';
+
+    function reCaptchaVerify(response) {
+        if (response === document.querySelector('.g-recaptcha-response').value) {
+            document.comment_form.submit();
+        }
+    }
+
+    function reCaptchaExpired() {
+    }
+
+    var onloadCallback = function () {
+        grecaptcha.render('recaptcha', {
+            'sitekey': '',
+            'callback': reCaptchaVerify,
+            'expired-callback': reCaptchaExpired
+        });
+    }
+</script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+</script>
+</body>
+</html>
